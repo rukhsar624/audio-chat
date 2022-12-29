@@ -1,0 +1,156 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="left col-lg-3 col-sm-6" [ngClass]="{'div-none' : show==false , 'div-block': show==true }">
+      <div class="body">
+        <div class="input-group p-3">
+          <div class="input-group-text" id="btnGroupAddon"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <input type="search" class="form-control" placeholder="Search and start new chat">
+        </div>
+        <div class="card chat-list">
+          <div class="d-flex justify-content-between" (click)="showform({name:'John' ,img:'../assets/image/profile2.jpg'})">
+            <div class="d-flex justify-content-between align-self-center" >
+              <div class="chat-list-img">
+                <img src="../assets/image/profile2.jpg" class="rounded-circle avatar" alt="">
+              </div>
+              <div>
+                <h5 class="chat-list-name" >John</h5>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center p-2">
+              <i class="fa-solid fa-circle"></i>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between mt-4" (click)="showform({name:'Mari' ,img:'../assets/image/profile3.jpg'})">
+            <div class="d-flex justify-content-between align-self-center">
+              <div class="chat-list-img">
+                <img src="../assets/image/profile3.jpg" class="rounded-circle avatar" alt="">
+              </div>
+              <div>
+                <h5 class="chat-list-name">Mari</h5>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center p-2">
+              <i class="fa-solid fa-circle"></i>
+            </div>
+          </div>
+          <!-- <div class="d-flex justify-content-between mt-4">
+            <div class="d-flex justify-content-between align-self-center">
+              <div class="chat-list-img">
+                <img src="../assets/image/profilegirl.jpg" class="rounded-circle avatar" alt="">
+              </div>
+              <div>
+                <h5 class="chat-list-name">Emma</h5>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center p-2">
+              <i class="fa-solid fa-circle"></i>
+            </div>
+          </div> -->
+        </div>
+        <!-- <div class="conversation">
+        </div> -->
+      </div>
+    </div>
+    <div class="right col-lg-9 col-sm-6" [ngClass]="{'div-none' : show==true , 'div-block': show==false }">
+      <div class="card header d-flex flex-row justify-content-between ">
+        <div class="d-flex flex-row data">
+          <div class="arrow" (click)="showform({})"><i class="fa-solid fa-arrow-left"></i></div>
+          <div class="avatar align-self-center">
+            <img src={{data.img}} class="rounded-circle avatar" alt="">
+          </div>
+          <div class="d-flex flex-column info ">
+            <div class="label mt-2">
+              {{data.name}}
+            </div>
+          </div>
+        </div>
+        <div class="icons">
+          <div class="options align-self-center">
+            <button class="autio-button"><i class="fa-solid fa-phone"></i></button>
+          </div>
+          <div class="options align-self-center">
+            <!-- <video #received_vedio [autoplay]="true" autoplay></video> -->
+            <button class="vedio-button"><i class="fa-solid fa-video"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class=" body mesgs">
+        <div class="msg_history">
+          <li class="message">
+            <div>
+              <div class="incoming_msg">
+                <div class="message break d-flex flex-column align-items-end w-100">
+                  <div class="incoming_msg  p-2 d-flex justify-content-end flex-column ">
+                    <div class="received_msg" id="incoming_msg">
+                      <div class="received_withd_msg d-flex mb-3">
+                        <div>
+                          <div class="box sb1 d-flex">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, quidem.</p>
+                          </div>
+                          <div class="d-flex mt-2">
+                            <p class="text-secondary text-end">28/12/2022 09:00 AM</p>
+                          </div>
+                        </div>
+                        <div class="incoming_msg_img ">
+                          <div class="inner-img ">
+                            <img src="../assets/image/profile3.jpg" alt="">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="d-flex justify-content-end">
+                    <div class="date text-dark d-flex justify-content-end p-1">
+                      <p class="text-secondary">28/12/2022 09:00 AM</p>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="outgoing_msg">
+                <div class="message break d-flex flex-column align-items-start">
+                  <div class="incoming_msg  p-2 d-flex justify-content-end flex-column">
+                    <div class="received_msg" id="outgoing">
+                      <div class="received_withd_msg d-flex mb-3">
+                        <div class="incoming_msg_img ">
+                          <div class="inner-img pr-5" style="margin-left: auto;">
+                            <img src="../assets/image/profilegirl.jpg" alt="">
+                          </div>
+                        </div>
+                        <div>
+                          <div class="box1 sb2">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, quidem.</p>
+                          </div>
+                          <div class="mt-2">
+                            <p class="text-secondary text-start">28/12/2022 09:00 AM</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="d-flex justify-content-end">
+                    <div class="date text-dark d-flex justify-content-end p-1">
+                      <p class="text-secondary">28/12/2022 09:00 AM</p>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </li>
+        </div>
+      </div>
+      <div class="  d-flex flex-row  justify-content-between row last-div">
+        <div class="input col-12 align-self-center">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Type your message here" id="pad-lef">
+            <div class="input-group-text" id="btnGroupAddon">
+              <button class="sendbtn" ><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+  </div>
+
+</div>
